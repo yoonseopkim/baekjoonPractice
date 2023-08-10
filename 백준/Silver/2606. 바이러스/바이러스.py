@@ -7,13 +7,11 @@ for _ in range(network):
     graph[a].append(b) #무방향 그래프
     graph[b].append(a)
 
-visited = [False] * (com + 1)
+visited=[0]*(com+1) # 방문한 컴퓨터인지 표시
 def dfs(start):
-    infected = 0
-    visited[start] = True
+    visited[start] = 1
     for adj in graph[start]:
-        if not visited[adj]:
-            infected += dfs(adj)
-    return infected + 1
-
-print(dfs(1)-1)
+        if visited[adj] == 0:
+            dfs(adj)
+dfs(1)
+print(sum(visited)-1) # 처음부터 1번은 감염되어있었다
