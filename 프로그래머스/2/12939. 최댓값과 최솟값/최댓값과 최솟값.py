@@ -1,14 +1,8 @@
 def solution(s):
-    ee = s.split()
-    li = []
-    for eee in ee:
-        li.append(int(eee))
+#     이미 리스트
+    a = list(map(int, s.split()))
+    miny = min(a)
+    maxy = max(a)
 
-    maxy = max(li)
-    miny = min(li)
-    # return miny, maxy
-    # print(f'"{miny} {maxy}"')
-    return f'{miny} {maxy}'
-
-
-    
+    answer = f'{miny} {maxy}'
+    return answer
