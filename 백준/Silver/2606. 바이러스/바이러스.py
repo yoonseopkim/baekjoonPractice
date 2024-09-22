@@ -1,17 +1,21 @@
 com = int(input())
 network = int(input())
 
-graph = [[] for _ in range(com + 1)]
-for _ in range(network):
-    a,b = list(map(int,input().split()))
-    graph[a].append(b) #무방향 그래프
-    graph[b].append(a)
+graph = [[] for _ in range(com+1)]
+visited = [False] * (com+1)
 
-visited=[0]*(com+1) # 방문한 컴퓨터인지 표시
+for _ in range(network):
+    n,m = list(map(int,input().split()))
+    # 그래프선언, 양방향그래프
+
+    graph[n].append(m)  # 양방향 그래프
+    graph[m].append(n)
+
 def dfs(start):
-    visited[start] = 1
+    visited[start] = True
+    infected = 1
     for adj in graph[start]:
-        if visited[adj] == 0:
-            dfs(adj)
-dfs(1)
-print(sum(visited)-1) # 처음부터 1번은 감염되어있었다
+        if not visited[adj]:
+            infected += dfs(adj)
+    return infected
+print(dfs(1)-1)
