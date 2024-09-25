@@ -1,12 +1,8 @@
-n = int(input())
+n= int(input())
+# 사람들 줄
 line = list(map(int,input().split()))
-res = [0] * n
-for i in range(n):
-    cnt = 0
-    for j in range(n):
-        if cnt == line[i] and res[j] == 0:
-            res[j] = i + 1
-            break
-        if res[j] ==0:
-            cnt += 1
+# 결과를 담을 , 어떤 키의 사람이 어디에 있는지
+res = []
+for i in range(n-1,-1,-1):
+    res.insert(line[i], i + 1)
 print(' '.join(map(str,res)))
