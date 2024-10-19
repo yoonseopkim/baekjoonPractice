@@ -1,5 +1,7 @@
 import math
 
-c = 5.26 * 8.27
+a = float(5.26)
+b = float(8.27)
+c = a*b
 
-print(round(c, 3))
+print(f'{c:.3f}')
