@@ -1,6 +1,6 @@
 n = int(input())
 
-if n >3000:
+if n >=3000:
     print('book')
 elif n< 1000:
     print('no')
