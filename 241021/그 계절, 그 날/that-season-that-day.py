@@ -27,35 +27,14 @@ def check_month(M) :
         return -1   
     
 def okay_day(Y, M, D):
-    check_year(Y)
-    # 31일까지
-    if M in (1, 3, 5, 7, 8,10,12):
-        if 1<= D <=31:
-            return True
-        else:
-            return -1
-    elif M in (4,6,9,11):
-        if 1<= D <=30:
-            return True
-        else:
-            return -1  
+    if M in (1, 3, 5, 7, 8, 10, 12):
+        return 1 <= D <= 31
+    elif M in (4, 6, 9, 11):
+        return 1 <= D <= 30
     elif M == 2:
-        # 윤년 
-        if check_year(Y) == True:
-            if 1<= D <=29:
-                return True
-            else:
-                return -1
-        # 윤년아님
-        else:
-            if 1<= D <=28:
-                return True
-            else:
-                return -1            
-        
-    # 달이 이상할경우
+        return 1 <= D <= 29 if check_year(Y) else 1 <= D <= 28
     else:
-        return -1  
+        return False
 
 
 
