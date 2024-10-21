@@ -1,12 +1,16 @@
 def check_year(Y):
     if Y % 4 ==0 :
-        return True
-    elif Y % 4==0 and Y % 100 != 0:
-        return False
-    elif Y % 4==0 and Y % 100 != 0 and Y % 400 ==0:
-        return True
+        if Y % 100 == 0:
+            if Y % 400==0:
+                return True
+            else:
+                return False
+        else:
+            return False
     else:
         return False
+             
+
 
 def check_month(M) :
     # 모든 조건이 맞을때 비로소 달을 내줘야함
@@ -54,16 +58,21 @@ def okay_day(M,D,Y):
         return -1  
 
 
+def check_day(D, Y,M):
+    
+    # 날짜가 가능한 날짜인지
+    if okay_day(M,D,Y):
+        return check_month(M)
+
+
+        
+
+
+
+
 def solution(Y,M,D):
     # 윤년부터 체크? 
-     # 날짜가 가능한 날짜인지
-    if okay_day(M,D,Y) == True:
-        return check_month(M)
-    else:
-        return -1
-
-    
-
+    return check_day(D, Y,M)
 
 Y, M , D = map(int,input().split())
 print(solution(Y, M , D))
