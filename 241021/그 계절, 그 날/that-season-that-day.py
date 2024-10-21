@@ -6,7 +6,7 @@ def check_year(Y):
             else:
                 return False
         else:
-            return False
+            return True
     else:
         return False
              
@@ -41,7 +41,7 @@ def okay_day(M,D,Y):
             return -1  
     elif M == 2:
         # 윤년 
-        if check_year(Y):
+        if check_year(Y) == True:
             if 1<= D <=29:
                 return True
             else:
@@ -63,11 +63,6 @@ def check_day(D, Y,M):
     # 날짜가 가능한 날짜인지
     if okay_day(M,D,Y):
         return check_month(M)
-
-
-        
-
-
 
 
 def solution(Y,M,D):
