@@ -48,28 +48,19 @@ def okay_day(M,D,Y):
                 return True
             else:
                 return -1            
-
-
         
     # 달이 이상할경우
     else:
         return -1  
 
-def check_day(D, Y,M):
-    
-    # 날짜가 가능한 날짜인지
-    if okay_day(M,D,Y) == True:
-        return check_month(M)
-
-
-        
-
-
-
 
 def solution(Y,M,D):
     # 윤년부터 체크? 
-    return check_day(D, Y,M)
+     # 날짜가 가능한 날짜인지
+    if okay_day(M,D,Y) == True:
+        return check_month(M)
+    else:
+        return -1
 
     
 
