@@ -58,16 +58,14 @@ def okay_day(M,D,Y):
         return -1  
 
 
-def check_day(D, Y,M):
-    
-    # 날짜가 가능한 날짜인지
-    if okay_day(M,D,Y):
-        return check_month(M)
 
 
 def solution(Y,M,D):
     # 윤년부터 체크? 
-    return check_day(D, Y,M)
+    if okay_day(Y, M, D):
+        return check_month(M)
+    else:
+        return None
 
 Y, M , D = map(int,input().split())
 print(solution(Y, M , D))
