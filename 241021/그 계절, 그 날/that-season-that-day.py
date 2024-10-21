@@ -26,7 +26,7 @@ def check_month(M) :
     else:
         return -1   
     
-def okay_day(M,D,Y):
+def okay_day(Y, M, D):
     check_year(Y)
     # 31일까지
     if M in (1, 3, 5, 7, 8,10,12):
