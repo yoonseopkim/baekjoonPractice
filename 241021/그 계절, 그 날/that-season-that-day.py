@@ -1,14 +1,14 @@
 def check_year(Y):
-    if Y % 4 ==0 :
+    if Y % 4 == 0:
         if Y % 100 == 0:
-            if Y % 400==0:
-                return True
+            if Y % 400 == 0:
+                return True  # 400의 배수인 경우 윤년
             else:
-                return False
+                return False  # 100의 배수지만 400의 배수가 아닌 경우 평년
         else:
-            return True
+            return True  # 4의 배수이면서 100의 배수가 아닌 경우 윤년
     else:
-        return False
+        return False  # 4의 배수가 아닌 경우 평년
              
 
 
@@ -44,7 +44,7 @@ def solution(Y,M,D):
     if okay_day(Y, M, D):
         return check_month(M)
     else:
-        return None
+        return -1
 
 Y, M , D = map(int,input().split())
 print(solution(Y, M , D))
