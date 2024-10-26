@@ -6,9 +6,11 @@ def sam(a,b):
     return res
 
 def issam(i):
-    
-    if (i // 10) %3 ==0 or (i % 10) % 3 ==0:
-        return True
+    while i > 0:
+        tmp = i //10
+        if tmp %3 ==0:
+
+            return True
 
 a,b = map(int,input().split())
 print(sam(a,b))
