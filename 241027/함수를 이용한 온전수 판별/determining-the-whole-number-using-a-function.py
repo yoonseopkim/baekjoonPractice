@@ -1,7 +1,7 @@
 a,b = map(int,input().split())
 
 def on(a,b):
-    res = 0
+    res = 1
     for i in range(a,b + 1):
         if onjun(i):
             res += 1
