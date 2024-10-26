@@ -1,8 +1,8 @@
-n = int(input())
 def a(n):
-    tmp = p
+    tmp = 0
     for i in range(1, n+1):
         tmp += i     
-    return i // 10
+    return tmp // 10
 
+n = int(input())
 print(a(n))
