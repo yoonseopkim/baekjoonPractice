@@ -2,7 +2,7 @@ a,b = map(int,input().split())
 def is_prime(a,b):
     res = 0
     for i in range(a,b+1):
-        if prime(i):
+        if prime(i) and i != 1:
             res += i 
     return res 
 
