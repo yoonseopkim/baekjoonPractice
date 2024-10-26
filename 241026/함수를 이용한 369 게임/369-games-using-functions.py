@@ -6,6 +6,7 @@ def sam(a,b):
     return res
 
 def issam(i):
+    
     if (i // 10) %3 ==0 or (i % 10) % 3 ==0:
         return True
 
