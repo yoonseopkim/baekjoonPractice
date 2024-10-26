@@ -10,7 +10,7 @@ def c(n1,n2,a,b):
                 tmp1.append(b[pnt])
                 pnt += 1
     # print(tmp, tmp1)
-    if tmp and tmp1:
+    if tmp and tmp1 and len(tmp)>1 and len(tmp1) > 1:
         if tmp == tmp1:
 
             return 'Yes'
